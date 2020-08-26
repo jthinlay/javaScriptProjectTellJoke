@@ -13,7 +13,7 @@ function toggleButton(){
 
 //Passing jokes to VoiceRSS API 
 function tellMe(joke){
-    console.log(joke)
+ 
     VoiceRSS.speech({
         key: `${key}`,
         src: `"The joke is " ${joke}`,
@@ -41,6 +41,7 @@ async function getJokes(){
         }
         //Text-to-Speech
         tellMe(joke);
+        console.log(joke);
 
         // Disable button
         toggleButton();
