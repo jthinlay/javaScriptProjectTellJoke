@@ -1,7 +1,6 @@
 const button = document.getElementById('button');
 const audioElement = document.getElementById('audio')   
 
-
 // Disabled / Enable button
 function toggleButton(){
     button.disabled = !button.disabled;
@@ -9,9 +8,10 @@ function toggleButton(){
 
 //Passing jokes to VoiceRSS API 
 function tellMe(joke){
+    const jokeString = joke.trim().replace(/ /g, '%20');
     VoiceRSS.speech({
         key:'c7215ab6224340e4ad49e70b8c7bec8b',
-        src: `"The joke is " ${joke}`,
+        src: `"The joke is " ${jokeString}`,
         hl: 'en-us',
         v: 'Linda',
         r: 0, 
